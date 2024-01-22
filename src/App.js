@@ -80,6 +80,13 @@ function App() {
     setResult(newArr.join(", "));
   };
 
+  // splice() 메서드는 배열의 기존 요소를 삭제 또는 교체하거나 새 요소를 추가하여 배열의 내용을 변경
+  const handleSplice = () => {
+    const newArr = [...array];
+    newArr.splice(2, 2, "kiwi", "lime");
+    setResult(newArr.join(", "));
+  };
+
   return (
     <div>
       <h1>Array API Practice</h1>
@@ -100,6 +107,7 @@ function App() {
         <button onClick={handlePush}>push</button>
         <button onClick={handlePop}>pop</button>
         <button onClick={handleSlice}>slice</button>
+        <button onClick={handleSplice}>splice</button>
       </div>
       <div>
         <strong>Array :</strong> {array.join(", ")}
