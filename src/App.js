@@ -87,6 +87,15 @@ function App() {
     setResult(newArr.join(", "));
   };
 
+  // indexOf() 메서드는 배열에서 주어진 요소를 찾을 수 있는 첫 번째 인덱스를 반환하고, 찾을 수 없는 경우 -1을 반환
+  const handleIndexOf = () => {
+    if (!query) {
+      alert("값을 입력하세요!");
+      return false;
+    }
+    setResult(array.indexOf(query));
+  };
+
   return (
     <div>
       <h1>Array API Practice</h1>
@@ -108,6 +117,7 @@ function App() {
         <button onClick={handlePop}>pop</button>
         <button onClick={handleSlice}>slice</button>
         <button onClick={handleSplice}>splice</button>
+        <button onClick={handleIndexOf}>indexOf</button>
       </div>
       <div>
         <strong>Array :</strong> {array.join(", ")}
