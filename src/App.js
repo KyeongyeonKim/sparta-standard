@@ -98,7 +98,9 @@ function App() {
 
   // // includes() 메서드는 배열의 항목에 특정 값이 포함되어 있는지를 판단하여 true 또는 false를 반환
   const handleIncludes = () => {
-    setResult(array.includes(query));
+    if (array.includes(query)) {
+      return setResult("true");
+    } else setResult("false");
   };
 
   const handleFind = () => {
