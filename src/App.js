@@ -96,6 +96,20 @@ function App() {
     setResult(array.indexOf(query));
   };
 
+  // // includes() 메서드는 배열의 항목에 특정 값이 포함되어 있는지를 판단하여 true 또는 false를 반환
+  const handleIncludes = () => {
+    setResult(array.includes(query));
+  };
+
+  const handleFind = () => {
+    const found = array.find((fruit) => {
+      if (fruit.includes(query)) {
+        return fruit;
+      } //else return "Not Found";
+    });
+    setResult(found);
+  };
+
   return (
     <div>
       <h1>Array API Practice</h1>
@@ -118,6 +132,8 @@ function App() {
         <button onClick={handleSlice}>slice</button>
         <button onClick={handleSplice}>splice</button>
         <button onClick={handleIndexOf}>indexOf</button>
+        <button onClick={handleIncludes}>includes</button>
+        <button onClick={handleFind}>find</button>
       </div>
       <div>
         <strong>Array :</strong> {array.join(", ")}
