@@ -73,6 +73,13 @@ function App() {
     setArray(newArr);
     setResult(newArr.join(", "));
   };
+
+  //slice() 메서드는 어떤 배열의 begin 부터 end 까지(end 미포함)에 대한 얕은 복사본을 새로운 배열 객체로 반환
+  const handleSlice = () => {
+    const newArr = array.slice(0, -2);
+    setResult(newArr.join(", "));
+  };
+
   return (
     <div>
       <h1>Array API Practice</h1>
@@ -92,6 +99,7 @@ function App() {
         <button onClick={handleReduce}>reduce</button>
         <button onClick={handlePush}>push</button>
         <button onClick={handlePop}>pop</button>
+        <button onClick={handleSlice}>slice</button>
       </div>
       <div>
         <strong>Array :</strong> {array.join(", ")}
