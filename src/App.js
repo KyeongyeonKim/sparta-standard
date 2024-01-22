@@ -112,6 +112,22 @@ function App() {
     setResult(found);
   };
 
+  const handleSome = () => {
+    const fruit = array.some((fruit) => fruit.includes(query));
+    setResult(fruit);
+  };
+
+  const handleEvery = () => {
+    const fruit = array.every((fruit) => fruit.length > 5);
+    setResult(fruit);
+  };
+
+  const handleSort = () => {
+    const newArr = [...array];
+    setArray(array);
+    setResult(newArr.sort().join(", "));
+  };
+
   return (
     <div>
       <h1>Array API Practice</h1>
@@ -136,6 +152,9 @@ function App() {
         <button onClick={handleIndexOf}>indexOf</button>
         <button onClick={handleIncludes}>includes</button>
         <button onClick={handleFind}>find</button>
+        <button onClick={handleSome}>some</button>
+        <button onClick={handleEvery}>every</button>
+        <button onClick={handleSort}>sort</button>
       </div>
       <div>
         <strong>Array :</strong> {array.join(", ")}
