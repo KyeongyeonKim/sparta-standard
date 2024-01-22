@@ -113,13 +113,15 @@ function App() {
   };
 
   const handleSome = () => {
-    const fruit = array.some((fruit) => fruit.includes(query));
-    setResult(fruit);
+    if (array.some((fruit) => fruit.includes(query))) {
+      return setResult("true");
+    } else return setResult("false");
   };
 
   const handleEvery = () => {
-    const fruit = array.every((fruit) => fruit.length > 5);
-    setResult(fruit);
+    if (array.every((fruit) => fruit.length > 5)) {
+      return setResult("true");
+    } else return setResult("false");
   };
 
   const handleSort = () => {
