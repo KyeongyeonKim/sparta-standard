@@ -35,16 +35,11 @@ const TodoList = ({ todos, setTodos }) => {
                     width: "200px",
                   }}
                 >
-                  <p>{todo.title}</p>
-                  <p>{todo.content}</p>
-                  <p>
-                    <button onClick={() => deleteBtnHandler(todo.id)}>
-                      삭제
-                    </button>
-                    <button onClick={() => onChangeHandler(todo.id)}>
-                      완료하기
-                    </button>
-                  </p>
+                  <Todo
+                    todo={todo}
+                    deleteBtnHandler={deleteBtnHandler}
+                    onChangeHandler={onChangeHandler}
+                  />
                 </div>
               );
             })}
@@ -65,16 +60,11 @@ const TodoList = ({ todos, setTodos }) => {
                     width: "200px",
                   }}
                 >
-                  <p>{todo.title}</p>
-                  <p>{todo.content}</p>
-                  <p>
-                    <button onClick={() => deleteBtnHandler(todo.id)}>
-                      삭제
-                    </button>
-                    <button onClick={() => onChangeHandler(todo.id)}>
-                      취소하기
-                    </button>
-                  </p>
+                  <Todo
+                    todo={todo}
+                    deleteBtnHandler={deleteBtnHandler}
+                    onChangeHandler={onChangeHandler}
+                  />
                 </div>
               );
             })}
